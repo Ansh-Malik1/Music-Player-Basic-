@@ -1,0 +1,274 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+    overflow: hidden;
+}
+#wrapper{
+    width:100vw;
+    height: 100vh;
+    background-color: bisque;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+h1{
+    margin-bottom: 1rem;
+}
+nav{
+    background-color: black;
+    color:white;
+    height:3rem;
+    width: 100%;    
+}
+
+ul{
+    padding: 0;
+    list-style:none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap:4rem;
+    padding: 0 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bolder;
+}
+.logo img{
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.underLine{
+    background-color: white;
+    height: 2px;
+    width:0;
+    transition: width 0.3s;
+}
+
+li:hover .underLine{
+    width: 100%;
+}
+
+
+.container{
+    height: 70%;
+    width:75%;
+    margin: auto;
+    background-color: black;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    padding:0.5rem 2rem; 
+    color:white;
+    border-radius: 20px;
+    overflow-y: scroll ;
+    scroll-behavior: smooth;
+} 
+
+
+.bottom{
+    background-color: black;
+    height: 18vh;
+    width: 100%;
+    gap:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem 0 ;
+    position: relative;
+}
+
+.icons{
+    display: flex;
+    gap:3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons i{
+    cursor: pointer;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 0.6fr 0.6fr;
+    place-items: center;
+    margin-top: 1rem;
+    gap:0.5rem;
+    background-color: white;
+    color:black;
+    padding:0.3rem 0;
+    width: 50%; 
+    border-radius: 20px;
+    scale:0.9;
+    cursor: pointer;
+}
+.item img{
+    width: 3em;
+    border-radius: 100%;
+    
+}
+#progressBar{
+    height: 0.5rem;
+    border:none;
+    width:80%;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#progressBar::-webkit-slider-thumb{
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    position: relative;
+    box-shadow: -407px 0 0 400px blue;
+    transition: all 100ms ease-in-out;  
+}
+
+
+.playBtn{
+    cursor: pointer;
+}
+
+.playImg{
+    width:2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.playingName{
+    color:white;
+    opacity: 0;
+}
+
+.songInfo{
+    position: absolute;
+    align-self: flex-start;
+    bottom:2em;
+    left:8rem;
+    display: flex;
+    gap:0.5rem;
+}
+
+@media screen and (max-width:930px) {
+    .container{
+        width:90%;
+        padding:1rem 0  1rem 0;
+        height:60%;
+    }
+    .item{
+        width: 95%;
+        margin: auto;
+        padding: auto 0.5rem;
+    }
+    #progressBar{
+        margin: 0 auto;
+    }
+    .songInfo{
+        position: initial;;
+        margin: 0 auto;
+    }
+    ul{
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+    .bottom{
+        height: 25vh;
+        width: 100vw;
+        gap:1rem;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .songList{
+        display: flex;
+        flex-direction: column;
+        gap:1.5rem;
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+    .logo{
+        width: 1.5rem;
+        margin-left: 0.5rem;
+    }
+
+}
+
+.active{
+    scale:1;
+    transition: all 0.5s;
+}
+.notActive{
+    scale:0.8;
+    opacity: 0.6;
+}
