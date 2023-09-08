@@ -182,6 +182,7 @@ li:hover .underLine{
     margin: auto;
     cursor: pointer;
     border-radius: 20px;
+    oveflow: hidden;
 }
 
 #progressBar::-webkit-slider-thumb{
